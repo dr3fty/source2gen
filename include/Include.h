@@ -18,6 +18,8 @@ using namespace std::this_thread;
 #pragma endregion Format
 
 #pragma region Source Engine 2
+// Change this if you want to target other S2 game
+#define CSGO2
 #include <SDK/SDK.h>
 #pragma endregion Source Engine 2
 

@@ -25,7 +25,7 @@ git clone --recurse-submodules https://github.com/neverlosecc/source2gen.git
 
 ### Update the Game Definition
 
-Before building the project in Visual Studio, you will need to update the game define in the file `include\sdk\interfaces\schemasystem\schema.h`. 
+Before building the project in Visual Studio, you will need to update the game define in the file `include\Include.h`. 
 The current definition is `CSGO2`, which corresponds to the game that this project is used for. \
 Possible options are: `CSGO2`, `SBOX`, `ARTIFACT2`, `ARTIFACT1`, `DOTA2`, `UNDERLORDS`, `DESKJOB`. \
 You can leave it as it is if you would use this project with the CS2 game.

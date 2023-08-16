@@ -4,8 +4,6 @@
 #include <SDK/Interfaces/common/CUtlTSHash.h>
 #include <tools/virtual.h>
 
-#define CSGO2
-
 #ifdef SBOX
 // untested, CSchemaType::m_schema_type_ might be wrong
     #define CSCHEMATYPE_GETSIZES_INDEX 5
