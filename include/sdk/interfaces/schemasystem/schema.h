@@ -45,7 +45,7 @@
 #elif defined CSGO2
     #define CSCHEMATYPE_GETSIZES_INDEX 3
     #define SCHEMASYSTEM_TYPE_SCOPES_OFFSET 0x190
-    #define SCHEMASYSTEMTYPESCOPE_OFF1 0x450
+    #define SCHEMASYSTEMTYPESCOPE_OFF1 0x480
     #define SCHEMASYSTEMTYPESCOPE_OFF2 0x2804
 #endif
 
@@ -155,6 +155,7 @@ enum ETypeCategory {
     Schema_None = 7
 };
 
+// Pretty sure they added a new category, but i don't really care
 enum EAtomicCategory {
     Atomic_Basic,
     Atomic_T,
@@ -308,10 +309,12 @@ private:
 
 class CSchemaSystemTypeScope {
 public:
-    CSchemaClassInfo* FindDeclaredClass(const char* class_name) {
-        return Virtual::Get<CSchemaClassInfo*(__thiscall*)(void*, const char*)>(this, 2)(this, class_name);
+    // Not sure about the return value
+    void FindDeclaredClass(CSchemaClassInfo** schema, const char* class_name) {
+        Virtual::Get<void(__thiscall*)(void*, void*, const char*)>(this, 2)(this, schema, class_name);
     }
 
+    // This is wrong, but nothing uses it so /shrug
     CSchemaEnumBinding* FindDeclaredEnum(const char* name) {
         return Virtual::Get<CSchemaEnumBinding*(__thiscall*)(void*, const char*)>(this, 3)(this, name);
     }
